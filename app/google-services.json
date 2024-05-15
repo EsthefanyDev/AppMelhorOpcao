@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1046516476580",
+    "firebase_url": "https://melhoropcaodelivery-default-rtdb.firebaseio.com",
+    "project_id": "melhoropcaodelivery",
+    "storage_bucket": "melhoropcaodelivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046516476580:android:4ed2d79590fcf378f2d431",
+        "android_client_info": {
+          "package_name": "com.example.melhor_opcao_delivery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT5ispGV10TmfxjqR7eZU9YuD39qFIoOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046516476580:android:93c13aa8dea66734f2d431",
+        "android_client_info": {
+          "package_name": "com.example.melhoropodelivery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT5ispGV10TmfxjqR7eZU9YuD39qFIoOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
