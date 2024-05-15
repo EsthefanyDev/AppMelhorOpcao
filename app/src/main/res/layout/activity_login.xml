@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/orange_background"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -18,7 +19,8 @@
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_logo2" />
+        app:srcCompat="@mipmap/login"
+        android:layout_marginTop="39dp"/>
 
     <TextView
         android:id="@+id/textView3"
