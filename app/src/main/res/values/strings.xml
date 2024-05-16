@@ -14,7 +14,7 @@
     <string name="categoria">Categoria</string>
 
 
-    <string name="intro_title"><font color="#000000"> Seja Bem-vindo(a)!</font> \n<font color="#FF1100">Delivery Melhor Opção!</font> \n<font color="#000000">Boas Compras!</font></string>
+    <string name="intro_title"><font color="#000000"> Seja Bem-vindo(a), ao</font> \n<font color="#FF1100">Delivery Melhor Opção</font> \n<font color="#000000">Boas Compras!</font></string>
     <string name="intro_text">Aqui, você encontra tudo o que precisa em alimentos, higiene e praticidade. Explore e faça suas compras com facilidade.</string>
     <string name="intro_signin">Já possui uma conta?<font color="#008b86"> Entre</font></string>
     <string name="intro_cadastre"> ou crie uma conta<font color="#008b86"> Aqui</font></string>

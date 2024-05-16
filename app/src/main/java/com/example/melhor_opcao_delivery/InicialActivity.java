@@ -43,7 +43,9 @@ public class InicialActivity extends AppCompatActivity {
             return insets;
         });
     }
-
+    public void entrarHome(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
     public void entraini(View view) {
         startActivity(new Intent(this, LoginActivity.class));
     }
@@ -52,3 +54,4 @@ public class InicialActivity extends AppCompatActivity {
         startActivity(new Intent(this, CadastrarActivity.class));
     }
 }
+
