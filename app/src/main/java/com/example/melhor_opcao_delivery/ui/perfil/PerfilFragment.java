@@ -1,4 +1,4 @@
-package com.example.melhor_opcao_delivery.ui.categoria;
+package com.example.melhor_opcao_delivery.ui.perfil;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,12 +10,12 @@ import androidx.fragment.app.Fragment;
 
 import com.example.melhor_opcao_delivery.R;
 
-public class CategoriaFragment extends Fragment {
+public class PerfilFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
 
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_categoria,container, false);
+        View root = inflater.inflate(R.layout.fragment_perfil,container, false);
         return root;
     }
 }

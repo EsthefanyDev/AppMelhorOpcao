@@ -13,8 +13,8 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/carrinho" />
         <item
-            android:id="@+id/nav_categoria"
+            android:id="@+id/nav_perfil"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/categoria" />
+            android:title="@string/perfil" />
     </group>
 </menu>

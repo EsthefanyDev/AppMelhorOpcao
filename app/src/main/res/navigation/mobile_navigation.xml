@@ -18,8 +18,8 @@
         tools:layout="@layout/fragment_carrinho" />
 
     <fragment
-        android:id="@+id/nav_categoria"
-        android:name="com.example.melhor_opcao_delivery.ui.categoria.CategoriaFragment"
-        android:label="@string/categoria"
-        tools:layout="@layout/fragment_categoria" />
+        android:id="@+id/nav_perfil"
+        android:name="com.example.melhor_opcao_delivery.ui.perfil.PerfilFragment"
+        android:label="@string/perfil"
+        tools:layout="@layout/fragment_perfil" />
 </navigation>

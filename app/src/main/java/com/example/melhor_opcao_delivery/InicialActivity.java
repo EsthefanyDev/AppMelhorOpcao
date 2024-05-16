@@ -23,7 +23,7 @@ public class InicialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_intro);
+        setContentView(R.layout.activity_inicial);
 
         auth = FirebaseAuth.getInstance();
         barraPros = findViewById(R.id.barrapros);
@@ -43,9 +43,7 @@ public class InicialActivity extends AppCompatActivity {
             return insets;
         });
     }
-    public void entrarHome(View view) {
-        startActivity(new Intent(this, MainActivity.class));
-    }
+
     public void entraini(View view) {
         startActivity(new Intent(this, LoginActivity.class));
     }
@@ -54,4 +52,3 @@ public class InicialActivity extends AppCompatActivity {
         startActivity(new Intent(this, CadastrarActivity.class));
     }
 }
-
