@@ -3,17 +3,17 @@ package com.example.melhor_opcao_delivery.Model;
 public class PopularModel {
     String name;
     String Descrição;
-    String ranque;
+    String preço;
     String desconto;
     String tipo;
     String img_url;
 
     public PopularModel(){
     }
-    public PopularModel(String name, String descrição, String ranque, String desconto, String tipo, String img_url){
+    public PopularModel(String name, String descrição, String preço, String desconto, String tipo, String img_url){
         this.name = name;
         this.Descrição = descrição;
-        this.ranque = ranque;
+        this.preço = preço;
         this.desconto = desconto;
         this.tipo = tipo;
         this.img_url = img_url;
@@ -36,12 +36,10 @@ public class PopularModel {
         Descrição = descrição;
     }
 
-    public String getRanque() {
-        return ranque;
-    }
+    public String getPreço() {return preço;}
 
-    public void setRanque(String ranque) {
-        this.ranque = ranque;
+    public void setPreço(String preço) {
+        this.preço = preço;
     }
 
     public String getDesconto() {
@@ -67,4 +65,6 @@ public class PopularModel {
     public void setImg_url(String img_url) {
         this.img_url = img_url;
     }
+
+
 }

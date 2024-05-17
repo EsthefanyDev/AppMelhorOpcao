@@ -36,7 +36,7 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Glide.with(context).load(popularModelList.get(position).getImg_url()).into(holder.popImg);
         holder.name.setText(popularModelList.get(position).getName());
-        holder.ranque.setText(popularModelList.get(position).getRanque());
+        holder.preço.setText(popularModelList.get(position).getPreço());
         holder.descrição.setText(popularModelList.get(position).getDescrição());
         holder.desconto.setText(popularModelList.get(position).getDesconto());
     }
@@ -48,7 +48,7 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView popImg;
-        TextView name,descrição,ranque,desconto;
+        TextView name,descrição,preço,desconto;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -56,7 +56,7 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
             name = itemView.findViewById(R.id.pop_name);
             descrição = itemView.findViewById(R.id.pop_des);
             desconto = itemView.findViewById(R.id.pop_desconto);
-            ranque = itemView.findViewById(R.id.pop_ranq);
+            preço = itemView.findViewById(R.id.pop_preco);
         }
     }
 }
