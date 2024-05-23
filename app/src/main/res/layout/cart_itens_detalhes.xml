@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="7dp"
+    app:cardElevation="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Produto"
+                android:fontFamily="@font/alice"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/nomeProduto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="pao"
+                android:textStyle="bold"
+                android:fontFamily="@font/alice"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Unitario"
+                android:fontFamily="@font/alice"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/precoProduto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="20.00"
+                android:textStyle="bold"
+                android:fontFamily="@font/alice"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Quantidade"
+                android:fontFamily="@font/alice"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/quantidadeTT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"
+                android:textStyle="bold"
+                android:fontFamily="@font/alice"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/alice"
+                android:text="Preco Total"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/precoTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="pao"
+                android:textStyle="bold"
+                android:fontFamily="@font/alice"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/deletar"
+            android:layout_width="392dp"
+            android:layout_height="41dp"
+            android:src="@drawable/baseline_delete" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
