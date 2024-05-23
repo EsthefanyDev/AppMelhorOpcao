@@ -30,25 +30,25 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    RecyclerView catRec;
     FirebaseFirestore db;
 
     //Catgorias itens
+    RecyclerView catRec;
     List<CatModel> catModelList;
     CatAtapter catatapter;
 
+    //Marcas populars
     RecyclerView popularRec;
-
-    //Popular itens
-
     List<PopularModel> popularModelList;
     PopularAdapters popularAdapters;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         db = FirebaseFirestore.getInstance();
 
+        popularRec = root.findViewById(R.id.pop_rec);
         catRec = root.findViewById(R.id.categorias_rec);
 
         //ITENS DA CATEGORIA

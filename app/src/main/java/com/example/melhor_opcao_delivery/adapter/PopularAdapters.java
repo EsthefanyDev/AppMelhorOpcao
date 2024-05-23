@@ -1,11 +1,11 @@
 package com.example.melhor_opcao_delivery.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.melhor_opcao_delivery.Model.PopularModel;
 import com.example.melhor_opcao_delivery.R;
+import com.example.melhor_opcao_delivery.atividades.ViewAllActivity;
 
 import java.util.List;
 
@@ -29,16 +30,31 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.popular_item,parent,false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.popular_item, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        // Use Glide to load image
         Glide.with(context).load(popularModelList.get(position).getImg_url()).into(holder.popImg);
-        holder.name.setText(popularModelList.get(position).getName());
-        holder.preço.setText(popularModelList.get(position).getPreço());
-        holder.descrição.setText(popularModelList.get(position).getDescrição());
-        holder.desconto.setText(popularModelList.get(position).getDesconto());
+
+        // Set click listener
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Get the current adapter position
+                int adapterPosition = holder.getAdapterPosition();
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    // Use the current adapter position to get the data
+                    PopularModel model = popularModelList.get(adapterPosition);
+
+                    // Create and start the intent
+                    Intent intent = new Intent(context, ViewAllActivity.class);
+                    intent.putExtra("tipo", model.getTipo());
+                    context.startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override
@@ -48,15 +64,10 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView popImg;
-        TextView name,descrição,preço,desconto;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             popImg = itemView.findViewById(R.id.pop_img);
-            name = itemView.findViewById(R.id.pop_name);
-            descrição = itemView.findViewById(R.id.pop_des);
-            desconto = itemView.findViewById(R.id.pop_desconto);
-            preço = itemView.findViewById(R.id.pop_preco);
         }
     }
 }
