@@ -1,75 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    app:cardCornerRadius="15dp">
+    app:cardCornerRadius="90dp">
 
     <LinearLayout
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
+        android:layout_width="210dp"
+        android:layout_height="190dp"
         android:orientation="vertical"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:background="@android:color/transparent">
 
         <!-- Imagem arredondada -->
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/pop_img"
-            android:layout_width="match_parent"
-            android:layout_height="190dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/mercado"
-            app:riv_corner_radius="14dp" />
-
-        <!-- Nome do produto -->
-        <TextView
-            android:id="@+id/pop_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/alice"
-            android:text="nome"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/mercado"
+            app:riv_corner_radius="90dp" />
 
-        <!-- Descrição do produto -->
-        <TextView
-            android:id="@+id/pop_des"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="descrição"
-            android:paddingTop="4dp"
-            android:paddingBottom="8dp" />
-
-        <!-- Linha horizontal para o preço e desconto -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <!-- Preço do produto -->
-            <TextView
-                android:id="@+id/pop_preco"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/alice"
-                android:text="R$ 100,00"
-                android:textStyle="bold" />
-
-            <!-- Desconto do produto -->
-            <TextView
-                android:id="@+id/pop_desconto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/alice"
-                android:text="Desconto 20%"
-                android:textColor="@color/red1"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+            android:orientation="horizontal"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

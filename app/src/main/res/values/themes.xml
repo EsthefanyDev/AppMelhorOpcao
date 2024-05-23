@@ -22,4 +22,12 @@
     <style name="Theme.Melhor_Opcao_Delivery.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Melhor_Opcao_Delivery.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+<!--    Define um estililo pro toobar-->
+    <style name="CustomToolbarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">28sp</item> <!-- Aumenta o tamanho do texto -->
+        <item name="android:textStyle">bold</item> <!-- Deixa o texto em negrito -->
+        <item name="android:fontFamily">sans-serif</item> <!-- Escolhe uma família de fontes -->
+        <item name="android:textColor">#730000</item> <!-- Cor do texto -->
+    </style>
 </resources>

@@ -1,70 +1,38 @@
 package com.example.melhor_opcao_delivery.Model;
 
 public class PopularModel {
-    String name;
-    String Descrição;
-    String preço;
-    String desconto;
-    String tipo;
-    String img_url;
+    // Strings usadas para armazenar as informações de itens populares
+    String tipo; // Tipo do item popular
+    String img_url; // URL da imagem do item popular
 
-    public PopularModel(){
-    }
-    public PopularModel(String name, String descrição, String preço, String desconto, String tipo, String img_url){
-        this.name = name;
-        this.Descrição = descrição;
-        this.preço = preço;
-        this.desconto = desconto;
-        this.tipo = tipo;
-        this.img_url = img_url;
-
+    // Construtor padrão (sem argumentos)
+    public PopularModel() {
     }
 
-    public String getName() {
-        return name;
+    // Construtor parametrizado (com argumentos)
+    public PopularModel(String tipo, String img_url) {
+        this.tipo = tipo; // Inicializa o tipo do item popular
+        this.img_url = img_url; // Inicializa a URL da imagem do item popular
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescrição() {
-        return Descrição;
-    }
-
-    public void setDescrição(String descrição) {
-        Descrição = descrição;
-    }
-
-    public String getPreço() {return preço;}
-
-    public void setPreço(String preço) {
-        this.preço = preço;
-    }
-
-    public String getDesconto() {
-        return desconto;
-    }
-
-    public void setDesconto(String desconto) {
-        this.desconto = desconto;
-    }
-
+    // Método getter para obter o tipo do item popular
     public String getTipo() {
         return tipo;
     }
 
+    // Método setter para definir o tipo do item popular
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
+    // Método getter para obter a URL da imagem do item popular
     public String getImg_url() {
         return img_url;
     }
 
+    // Método setter para definir a URL da imagem do item popular
     public void setImg_url(String img_url) {
         this.img_url = img_url;
     }
-
-
 }
+

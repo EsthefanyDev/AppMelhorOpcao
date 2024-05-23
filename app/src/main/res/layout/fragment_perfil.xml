@@ -7,15 +7,18 @@
     android:background="#F3F1F1"
     tools:context=".ui.perfil.PerfilFragment">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/perfil_img"
-        android:layout_width="399dp"
-        android:layout_height="174dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/ic_menu_camera"
+        app:civ_border_width="2dp"
+        android:layout_marginTop="15dp"
+        app:civ_border_color="#FF000000"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/perfil_nome"
@@ -112,5 +115,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/perfil_senha"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintVertical_bias="0.258" />
 </androidx.constraintlayout.widget.ConstraintLayout>
