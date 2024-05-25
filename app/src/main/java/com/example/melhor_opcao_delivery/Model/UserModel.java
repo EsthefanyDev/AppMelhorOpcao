@@ -6,50 +6,67 @@ public class UserModel {
         String enderecoUsuario;
         String cpfUsuario;
         String senhaUsuario;
+        boolean isAdmin;
 
-        public UserModel(){
-        }
+    public UserModel() {
+        // Este é o construtor padrão exigido pelo Firebase
+    }
 
-        public UserModel(String nomeUsuario, String emailUsuario, String enderecoUsuario, String cpfUsuario, String senhaUsuario){
+        public UserModel(String nomeUsuario, String emailUsuario, String enderecoUsuario, String cpfUsuario, String senhaUsuario, boolean isAdmin){
             this.nomeUsuario = nomeUsuario;
             this.emailUsuario = emailUsuario;
             this.enderecoUsuario = enderecoUsuario;
             this.cpfUsuario = cpfUsuario;
             this.senhaUsuario = senhaUsuario;
-        }
-        public String getNomeUsuario(){
-            return nomeUsuario;
-        }
-        public void setNomeUsuario(String nomeUsuario){
-            this.nomeUsuario = nomeUsuario;
+            this.isAdmin = isAdmin;
         }
 
-        public String getEmailUsuario(){
-            return emailUsuario;
-        }
-        public void setEmailUsuario(String emailUsuario){
-            this.emailUsuario = emailUsuario;
-        }
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
 
-        public String getEnderecoUsuario(){
-            return enderecoUsuario;
-        }
-        public void setEnderecoUsuario(String enderecoUsuario){
-            this.enderecoUsuario= enderecoUsuario;
-        }
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
 
-        public String getCpfUsuario(){
-            return cpfUsuario;
-        }
-        public void setCpfUsuario(String cpfUsuario){
-            this.cpfUsuario = cpfUsuario;
-        }
+    public String getEmailUsuario() {
+        return emailUsuario;
+    }
 
-        public String getSenhaUsuario(){
-            return senhaUsuario;
-        }
-        public void setSenhaUsuario(String senhaUsuario){
-            this.senhaUsuario = senhaUsuario;
+    public void setEmailUsuario(String emailUsuario) {
+        this.emailUsuario = emailUsuario;
+    }
 
+    public String getEnderecoUsuario() {
+        return enderecoUsuario;
+    }
+
+    public void setEnderecoUsuario(String enderecoUsuario) {
+        this.enderecoUsuario = enderecoUsuario;
+    }
+
+    public String getCpfUsuario() {
+        return cpfUsuario;
+    }
+
+    public void setCpfUsuario(String cpfUsuario) {
+        this.cpfUsuario = cpfUsuario;
+    }
+
+    public String getSenhaUsuario() {
+        return senhaUsuario;
+    }
+
+    public void setSenhaUsuario(String senhaUsuario) {
+        this.senhaUsuario = senhaUsuario;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }
+

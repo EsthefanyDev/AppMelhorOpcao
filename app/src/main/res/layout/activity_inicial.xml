@@ -6,53 +6,52 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".atividades.InicialActivity"
-    android:background="@mipmap/orange_background">
-
+    tools:context=".atividades.InicialActivity">
 
   <ProgressBar
       android:id="@+id/barrapros"
-      android:layout_width="52dp"
-      android:layout_height="68dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="181dp"
+      android:layout_marginTop="36dp"
+      android:layout_marginEnd="182dp"
+      android:layout_marginBottom="67dp"
       android:scaleX=".5"
       android:scaleY=".5"
-      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/linearLayout"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/linearlayout"
-      app:layout_constraintVertical_bias="0.6">
+      app:layout_constraintTop_toBottomOf="@+id/linearlayout">
 
   </ProgressBar>
 
   <ImageView
       android:id="@+id/imageView2"
-      android:layout_width="413dp"
-      android:layout_height="282dp"
-      android:layout_marginTop="10dp"
+      android:layout_width="411dp"
+      android:layout_height="194dp"
+      android:layout_marginTop="3dp"
       android:layout_marginBottom="17dp"
       android:importantForAccessibility="no"
       app:layout_constraintBottom_toTopOf="@+id/textView5"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:srcCompat="@drawable/logo2" />
+      app:srcCompat="@mipmap/ic_launcher_logo2" />
 
   <TextView
       android:id="@+id/textView5"
-      android:layout_width="412dp"
-      android:layout_height="95dp"
-      android:text="Seja Bem-vindo(a)! Fique a vontade para explorar uma ampla variedade de produtos"
+      android:layout_width="388dp"
+      android:layout_height="72dp"
+      android:text="Bem vindo ao Melhor Opção Delivery,Fique a vontade para explorar uma ampla variedade de produtos"
       android:textAlignment="center"
-      android:textColor="@color/red1"
+      android:textColor="#950000"
       android:textSize="20sp"
       android:textStyle="bold"
       app:layout_constraintBottom_toTopOf="@+id/linearlayout"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.478"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+      app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
 
   <LinearLayout
       android:id="@+id/linearlayout"
@@ -64,7 +63,7 @@
       app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.694">
+      app:layout_constraintVertical_bias="0.48">
 
     <LinearLayout
         android:id="@+id/entraini"
@@ -82,7 +81,7 @@
           android:layout_width="50dp"
           android:layout_height="50dp"
           android:importantForAccessibility="no"
-          android:src="@mipmap/ic_launcher_login_foreground" />
+          android:src="@mipmap/ic_launcher_login" />
 
       <TextView
           android:layout_width="wrap_content"
@@ -90,14 +89,14 @@
           android:layout_marginLeft="6dp"
           android:layout_marginTop="10dp"
           android:text="ENTRAR"
-          android:textColor="@color/red1"
+          android:textColor="#BD0000"
           android:textSize="22sp"
           android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/cadastraini"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="cadastraini"
         android:orientation="horizontal"
@@ -121,7 +120,7 @@
           android:layout_marginLeft="6dp"
           android:layout_marginTop="10dp"
           android:text="CADASTRAR"
-          android:textColor="@color/red1"
+          android:textColor="#BD0000"
           android:textSize="22sp"
           android:textStyle="bold" />
     </LinearLayout>
@@ -130,18 +129,25 @@
 
   <LinearLayout
       android:id="@+id/linearLayout"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_width="414dp"
+      android:layout_height="177dp"
       android:orientation="vertical"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/barrapros"
-      app:layout_constraintVertical_bias="0.0">
+      app:layout_constraintTop_toBottomOf="@+id/linearlayout"
+      app:layout_constraintVertical_bias="1.0">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informações de roda pé"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
   </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

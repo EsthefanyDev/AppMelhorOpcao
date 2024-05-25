@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -44,9 +46,32 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.Melhor_Opcao_Delivery.NoActionBar" />
 
+        <!-- Serviço do Firebase Cloud Messaging -->
+        <service
+            android:name=".Firebase.MeuFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- Meta-data para configuração das notificações -->
         <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/notif_icon" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/red1" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+
+        <activity
+            android:name=".atividades.AdminActivity"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>

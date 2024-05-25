@@ -125,7 +125,13 @@ public class CadastrarActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 barraPros.setVisibility(View.GONE);
-                                UserModel Model = new UserModel(nomeUsuario, emailUsuario, enderecoUsuario, cpfUsuario, senhaUsuario);
+                                UserModel Model = new UserModel(
+                                        nomeUsuario,
+                                        emailUsuario,
+                                        enderecoUsuario,
+                                        cpfUsuario,
+                                        senhaUsuario,
+                                        false);
                                 String id = Objects.requireNonNull(task.getResult().getUser()).getUid();
                                 database.getReference().child("Usuarios").child(id).setValue(Model);
 

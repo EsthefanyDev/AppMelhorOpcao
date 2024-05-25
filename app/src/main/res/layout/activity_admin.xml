@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".atividades.AdminActivity">
+
+    <TextView
+        android:id="@+id/title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bem-vindo, Administrador!"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/view_orders_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Ver Pedidos"
+        android:layout_below="@id/title_textview"
+        android:layout_marginTop="24dp"
+        android:onClick="viewOrdersButtonClick"/>
+
+    <!-- Adicione mais elementos conforme necessário -->
+
+</RelativeLayout>
