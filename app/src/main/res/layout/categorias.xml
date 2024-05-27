@@ -11,28 +11,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="5dp"
-        android:background="@color/Yellow1">
+        android:padding="15dp"
+        android:background="@color/white">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/cat_imag"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
+            android:layout_marginBottom="8dp"
             android:src="@mipmap/ic_launcher_login_round"
             app:riv_corner_radius="15dp" />
 
         <TextView
             android:id="@+id/catnome"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="33dp"
             android:fontFamily="@font/alice"
             android:text="Alimentos"
             android:textAlignment="center"
-            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             android:textStyle="bold"
-            tools:ignore="TextSizeCheck"
-            android:textColor="@color/black"/>
+            tools:ignore="TextSizeCheck" />
 
     </LinearLayout>
 

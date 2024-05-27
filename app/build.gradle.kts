@@ -58,7 +58,13 @@ dependencies {
     //ImageView Circular
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
+
     //Configuração do Firebase Cloud Messaging (FCM) para Notificações
     implementation ("com.google.firebase:firebase-messaging:23.0.0")
+
+
+
+
+
 
 }

@@ -2,15 +2,33 @@
     <!-- Base application theme. -->
     <style name="Theme.Melhor_Opcao_Delivery" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">#F71124</item> <!-- Vermelho -->
+        <item name="colorPrimaryVariant">#F71124</item> <!--  -->
+        <item name="colorOnPrimary">#FFFFFF</item> <!-- Branco -->
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">#FFFFFF</item> <!-- Branco -->
+        <item name="colorSecondaryVariant">#FFD800</item> <!-- Amarelo -->
+        <item name="colorOnSecondary">#000000</item> <!-- Preto -->
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.Melhor_Opcao_Delivery.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Melhor_Opcao_Delivery.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Melhor_Opcao_Delivery.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Define um estilo para a barra de ferramentas -->
+    <style name="CustomToolbarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">28sp</item> <!-- Aumenta o tamanho do texto -->
+        <item name="android:textStyle">bold</item> <!-- Deixa o texto em negrito -->
+        <item name="android:fontFamily">sans-serif</item> <!-- Escolhe uma família de fontes -->
+        <item name="android:textColor">#FFD800</item> <!-- Cor do texto (amarelo) -->
     </style>
 </resources>
