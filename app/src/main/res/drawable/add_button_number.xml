@@ -1,5 +1,17 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:tint="#000000" android:viewportHeight="24" android:viewportWidth="24" android:width="24dp">
-      
-    <path android:fillColor="@android:color/white" android:pathData="M10,7L8,7v4L4,11v2h4v4h2v-4h4v-2h-4L10,7zM20,18h-2L18,7.38L15,8.4L15,6.7L19.7,5h0.3v13z"/>
-    
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    >
+
+    <!-- Background: Círculo -->
+    <path
+
+        android:pathData="M12,2c5.523,0 10,4.477 10,10c0,5.523 -4.477,10 -10,10c-5.523,0 -10,-4.477 -10,-10c0,-5.523 4.477,-10 10,-10z" />
+
+    <!-- Símbolo de adição -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M11,6v4h-4v2h4v4h2v-4h4v-2h-4v-4h-2z" />
 </vector>

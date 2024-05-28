@@ -13,6 +13,7 @@
     <color name="red1">#FF1100</color>
     <color name="red2">#C10D00</color>
     <color name="red3">#BF0000</color>
+    <color name="red4" nome="vermelho_claro">#F75564</color>
 
     <color name="green1">#00FF0A</color>
     <color name="green2">#00B307</color>
@@ -21,10 +22,12 @@
     <color name="blue1">#0027FF</color>
     <color name="blue2">#0019A3</color>
     <color name="blue3">#000E59</color>
+    <color name="darkblue">#2E4058</color>
 
     <color name="Yellow1">#E8FF00</color>
     <color name="Yellow2">#A4B500</color>
     <color name="Yellow3">#FFE500</color>
+    <color name="Yellow4">#FFEFDA</color>
 
     <color name="cray1">#B8B8B8</color>
     <color name="cray2">#505050</color>

@@ -6,36 +6,31 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".atividades.DetalhesActivity">
+    tools:context=".atividades.DetalhesActivity"
+    android:background="@color/Yellow4">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="378dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="4dp"
-        android:background="@color/Yellow2"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/red1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/add_to_car"
             style="@android:style/Widget.Button"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginEnd="8dp"
-            android:background="@android:drawable/button_onoff_indicator_on"
             android:gravity="center"
             android:paddingStart="16sp"
-            android:text="Comprar"
+            android:text="Adicionar ao Carrinho"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/white"
+            android:textColor="@color/green2"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,14 +41,16 @@
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="89dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="92dp"
             android:text="Preço Total"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/add_to_car"
+            app:layout_constraintHorizontal_bias="0.301"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/add_to_car"
             tools:ignore="HardcodedText" />
@@ -63,119 +60,73 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="R$0"
-            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textSize="19sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/add_to_car"
             app:layout_constraintStart_toStartOf="@+id/textView13"
             app:layout_constraintTop_toBottomOf="@+id/textView13"
             tools:ignore="HardcodedText" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginBottom="2dp"
-        android:orientation="vertical"
-        android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-
-        <TextView
-            android:id="@+id/detalhe_preco"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="97dp"
-            android:layout_marginBottom="2dp"
-            android:fontFamily="@font/alice"
-            android:text="Preco: 30/kg"
-            android:textColor="#6E0000"
-            android:textSize="34sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Detalhes"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/detalhe_descri"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="eeeeeeeeeee"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!-- ConstraintLayout for ImageView -->
-
-        <Toolbar
-            android:id="@+id/toolbar2"
-            style="bold"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="4dp"
-            android:background="@color/green2"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:title="*Detalhe Do Produto*"
-            android:titleTextAppearance="@style/CustomToolbarTitleText"
-            tools:ignore="HardcodedText" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="16dp">
+            tools:layout_editor_absoluteX="-2dp"
+            tools:layout_editor_absoluteY="2dp"
+            tools:ignore="MissingConstraints">
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="3dp">
+
+        <!-- ConstraintLayout for ImageView -->
+
+        <!-- ConstraintLayout for details and controls -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            >
 
             <ImageView
                 android:id="@+id/detalhe_img"
-                android:layout_width="0dp"
-                android:layout_height="312dp"
+                android:layout_width="412dp"
+                android:layout_height="275dp"
                 android:importantForAccessibility="no"
-                android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="MissingConstraints"
                 tools:srcCompat="@tools:sample/avatars" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="73dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/white_bg_top_corner"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
 
             <ImageView
                 android:id="@+id/remove_item"
-                android:layout_width="54dp"
-                android:layout_height="34dp"
-                android:background="@color/Yellow1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/red4"
                 android:src="@drawable/reducer_button_number" />
 
             <TextView
@@ -187,24 +138,62 @@
                 android:layout_marginEnd="8dp"
                 android:gravity="center"
                 android:text="1"
-                android:textColor="@color/Yellow2"
+                android:textColor="@color/black"
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/add_item"
-                android:layout_width="54dp"
-                android:layout_height="34dp"
-                android:background="@color/blue1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/green2"
                 android:src="@drawable/add_button_number" />
         </LinearLayout>
-        <!-- ConstraintLayout for details and controls -->
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="385dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="16dp">
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/detalhe_preco"
+                android:layout_width="366dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/alice"
+                android:text="Preco: 30/kg"
+                android:textAlignment="center"
+                android:textColor="@color/darkblue"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Detalhes"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/detalhe_descri"
+                android:layout_width="match_parent"
+                android:layout_height="113dp"
+                android:layout_marginTop="16dp"
+                android:text="eeeeeeeeeee"
+                android:textSize="16sp" />
+        </LinearLayout>
+
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

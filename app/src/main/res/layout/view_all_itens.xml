@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
     app:cardCornerRadius="15dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:background="@color/white">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_margin="8dp"
+        android:background="@color/white"
+        android:padding="5dp">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/prod_imag"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="145dp"
+            android:layout_height="145dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="0dp"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_launcher_login_round"
             app:riv_corner_radius="15dp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="206dp"
+            android:layout_height="121dp"
+            android:layout_toEndOf="@id/prod_imag"
             android:orientation="vertical"
             android:padding="5dp">
 
@@ -35,8 +42,8 @@
                 android:padding="5dp"
                 android:text="produto"
                 android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textColor="@color/darkblue"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -44,45 +51,61 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alice"
+                android:padding="5dp"
                 android:text="descriao"
                 android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:padding="5dp"/>
+                android:textColor="@color/darkblue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alice"
-                    android:text="preco R$"
+                    android:padding="2dp"
+                    android:text="Preço R$"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:padding="2dp"/>
+                    android:textColor="@color/green3"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/prod_prco"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alice"
+                    android:padding="2dp"
                     android:text="00.00"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:padding="2dp"/>
-
-
+                    android:textColor="@color/green3"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
             </LinearLayout>
-
         </LinearLayout>
 
-    </LinearLayout>
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/red_bg">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

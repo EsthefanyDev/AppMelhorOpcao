@@ -1,5 +1,16 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:tint="#000000" android:viewportHeight="24" android:viewportWidth="24" android:width="24dp">
-      
-    <path android:fillColor="@android:color/white" android:pathData="M4,11v2h8v-2L4,11zM19,18h-2L17,7.38L14,8.4L14,6.7L18.7,5h0.3v13z"/>
-    
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Background: Círculo -->
+    <path
+        android:fillColor="@color/red4"
+        android:pathData="M12,2c5.523,0 10,4.477 10,10c0,5.523 -4.477,10 -10,10c-5.523,0 -10,-4.477 -10,-10c0,-5.523 4.477,-10 10,-10z" />
+
+    <!-- Símbolo de menos -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M6,12h12v1.5h-12z" />
 </vector>

@@ -122,8 +122,9 @@
 
         <ImageView
             android:id="@+id/deletar"
-            android:layout_width="392dp"
-            android:layout_height="41dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="350dp"
             android:src="@drawable/baseline_delete" />
 
     </LinearLayout>
