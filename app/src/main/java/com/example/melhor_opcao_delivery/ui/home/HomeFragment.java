@@ -4,12 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,33 +25,29 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-//import com.example.melhor_opcao_delivery.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
     FirebaseFirestore db;
 
-    //Catgorias itens
+    // Categorias itens
     RecyclerView catRec;
     List<CatModel> catModelList;
     CatAtapter catatapter;
 
-    //Marcas populars
+    // Marcas populares
     RecyclerView popularRec;
     List<PopularModel> popularModelList;
     PopularAdapters popularAdapters;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         db = FirebaseFirestore.getInstance();
 
-        popularRec = root.findViewById(R.id.pop_rec);
+        // Configurar RecyclerView de categorias
         catRec = root.findViewById(R.id.categorias_rec);
-
-        //ITENS DA CATEGORIA
-        catRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        catRec.setLayoutManager(new GridLayoutManager(getActivity(), 3)); // 3 colunas
         catModelList = new ArrayList<>();
         catatapter = new CatAtapter(getActivity(), catModelList);
         catRec.setAdapter(catatapter);
@@ -62,28 +57,23 @@ public class HomeFragment extends Fragment {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
-                            for (QueryDocumentSnapshot documentSnapshot : task.getResult()){
-
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
                                 CatModel catModel = documentSnapshot.toObject(CatModel.class);
                                 catModelList.add(catModel);
                                 catatapter.notifyDataSetChanged();
-
                             }
-                        }else {
-
-                            Toast.makeText(getActivity(), "Error"+task.getException(), Toast.LENGTH_SHORT).show();
-
+                        } else {
+                            Toast.makeText(getActivity(), "Error" + task.getException(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
 
-
+        // Configurar RecyclerView de marcas populares
         popularRec = root.findViewById(R.id.pop_rec);
-        // POPULAR ITENS
-        popularRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
+        popularRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         popularModelList = new ArrayList<>();
-        popularAdapters = new PopularAdapters(getActivity(),popularModelList);
+        popularAdapters = new PopularAdapters(getActivity(), popularModelList);
         popularRec.setAdapter(popularAdapters);
 
         db.collection("PopularProdutos")
@@ -91,21 +81,18 @@ public class HomeFragment extends Fragment {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
-                            for (QueryDocumentSnapshot documentSnapshot : task.getResult()){
-
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
                                 PopularModel popularModel = documentSnapshot.toObject(PopularModel.class);
                                 popularModelList.add(popularModel);
                                 popularAdapters.notifyDataSetChanged();
-
                             }
-                        }else {
-
-                            Toast.makeText(getActivity(),"Error"+task.getException(),Toast.LENGTH_SHORT).show();
-
+                        } else {
+                            Toast.makeText(getActivity(), "Error" + task.getException(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+
         return root;
     }
 }
