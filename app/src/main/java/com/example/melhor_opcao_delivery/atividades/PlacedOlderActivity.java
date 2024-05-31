@@ -3,12 +3,8 @@ package com.example.melhor_opcao_delivery.atividades;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.melhor_opcao_delivery.Model.CardModel;
 import com.example.melhor_opcao_delivery.R;
@@ -25,18 +21,13 @@ import java.util.Objects;
 
 public class PlacedOlderActivity extends AppCompatActivity {
 
-    FirebaseAuth auth;
-    FirebaseFirestore firestore;
+    private FirebaseAuth auth;
+    private FirebaseFirestore firestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_placed_older);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;});
 
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
@@ -56,7 +47,11 @@ public class PlacedOlderActivity extends AppCompatActivity {
                         .collection("MeuPedido").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                             @Override
                             public void onComplete(@NonNull Task<DocumentReference> task) {
+                                if(task.isSuccessful()){
                                     Toast.makeText(PlacedOlderActivity.this, "Seu pedido foi feito", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(PlacedOlderActivity.this, "Erro ao fazer o pedido", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         });
             }

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".atividades.DetalhesActivity"
-    android:background="@color/Yellow4">
+    android:background="@mipmap/orange_background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -84,9 +84,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="3dp">
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detalhes"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/alice"
+            android:textColor="@color/darkblue"
+            android:textAlignment="center"/>
+
 
         <!-- ConstraintLayout for ImageView -->
 
@@ -94,18 +104,19 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-
-            android:layout_marginTop="30dp"
+            android:layout_margin="10dp"
             android:layout_height="wrap_content"
             >
 
             <ImageView
                 android:id="@+id/detalhe_img"
-                android:layout_width="412dp"
-                android:layout_height="275dp"
+                android:layout_width="256dp"
+                android:layout_height="256dp"
+                android:layout_margin="40dp"
                 android:importantForAccessibility="no"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
                 tools:ignore="MissingConstraints"
@@ -115,12 +126,11 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="73dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/white_bg_top_corner"
+            android:layout_height="68dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/red_bg_full_corner"
             android:gravity="center"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints">
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/remove_item"
@@ -153,8 +163,8 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="385dp"
-            android:background="@color/white"
+            android:layout_height="242dp"
+            android:layout_margin="3dp"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -163,13 +173,12 @@
                 android:id="@+id/detalhe_preco"
                 android:layout_width="366dp"
                 android:layout_height="wrap_content"
-
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="2dp"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="1dp"
                 android:fontFamily="@font/alice"
-                android:text="Preco: 30/kg"
+                android:text="Preço: R$00,00"
                 android:textAlignment="center"
-                android:textColor="@color/darkblue"
+                android:textColor="@color/red1"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -177,19 +186,24 @@
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Detalhes"
+                android:layout_marginTop="15dp"
+                android:text="Descrição"
                 android:textAlignment="center"
+                android:textColor="@color/darkblue"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/detalhe_descri"
-                android:layout_width="match_parent"
-                android:layout_height="113dp"
-                android:layout_marginTop="16dp"
-                android:text="eeeeeeeeeee"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Indulge in comfort with the Chili Cheese Dog, a
+hearty delight boasting a beef hot dog smothered
+ in rich chili."
+                android:textAlignment="center"
+                android:textColor="@color/darkblue"
                 android:textSize="16sp" />
         </LinearLayout>
 

@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
@@ -16,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Melhor_Opcao_Delivery"
         tools:targetApi="31">
+        <activity
+            android:name=".atividades.FinalBuyActivity"
+            android:exported="false" />
         <activity
             android:name=".atividades.PlacedOlderActivity"
             android:exported="false" />
@@ -44,18 +46,14 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Melhor_Opcao_Delivery.NoActionBar" />
-
-        <!-- Serviço do Firebase Cloud Messaging -->
+            android:theme="@style/Theme.Melhor_Opcao_Delivery.NoActionBar" /> <!-- Serviço do Firebase Cloud Messaging -->
         <service
             android:name=".Firebase.MeuFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </service>
-
-        <!-- Meta-data para configuração das notificações -->
+        </service> <!-- Meta-data para configuração das notificações -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/notif_icon" />
@@ -66,12 +64,9 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
 
-
         <activity
             android:name=".atividades.AdminActivity"
             android:exported="false" />
-
-
     </application>
 
 </manifest>

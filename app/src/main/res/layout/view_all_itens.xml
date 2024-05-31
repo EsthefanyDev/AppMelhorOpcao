@@ -28,39 +28,40 @@
             app:riv_corner_radius="15dp" />
 
         <LinearLayout
-            android:layout_width="206dp"
-            android:layout_height="121dp"
+            android:layout_width="201dp"
+            android:layout_height="139dp"
+            android:layout_marginStart="5dp"
             android:layout_toEndOf="@id/prod_imag"
             android:orientation="vertical"
             android:padding="5dp">
 
             <TextView
                 android:id="@+id/prod_nome"
-                android:layout_width="wrap_content"
+                android:layout_width="201dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alice"
                 android:padding="5dp"
                 android:text="produto"
                 android:textAlignment="center"
-                android:textColor="@color/darkblue"
-                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/prod_dscri"
-                android:layout_width="wrap_content"
+                android:layout_width="201dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alice"
                 android:padding="5dp"
                 android:text="descriao"
                 android:textAlignment="center"
                 android:textColor="@color/darkblue"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="170dp"
+                android:layout_height="71dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -71,7 +72,7 @@
                     android:text="Preço R$"
                     android:textAlignment="viewStart"
                     android:textColor="@color/green3"
-                    android:textSize="22sp"
+                    android:textSize="19sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -83,7 +84,7 @@
                     android:text="00.00"
                     android:textAlignment="viewStart"
                     android:textColor="@color/green3"
-                    android:textSize="22sp"
+                    android:textSize="19sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>

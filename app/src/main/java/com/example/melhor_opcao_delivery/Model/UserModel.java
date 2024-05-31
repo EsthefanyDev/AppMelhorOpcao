@@ -6,6 +6,7 @@ public class UserModel {
         String enderecoUsuario;
         String cpfUsuario;
         String senhaUsuario;
+        String imgPerfil;
         boolean isAdmin;
 
     public UserModel() {
@@ -20,6 +21,14 @@ public class UserModel {
             this.senhaUsuario = senhaUsuario;
             this.isAdmin = isAdmin;
         }
+
+    public String getImgPerfil() {
+        return imgPerfil;
+    }
+
+    public void setImgPerfil(String imgPerfil) {
+        this.imgPerfil = imgPerfil;
+    }
 
     public String getNomeUsuario() {
         return nomeUsuario;

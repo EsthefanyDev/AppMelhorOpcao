@@ -21,10 +21,20 @@
             android:drawableStart="@drawable/search_icon"
             android:drawablePadding="13dp"
             android:elevation="3dp"
-            android:hint="Pesquise um produto"
+            android:text="Pesquise um produto"
             android:importantForAutofill="no"
             android:padding="13dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
             tools:ignore="HardcodedText,TextFields" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/pesquisa_rec"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"/>
 
         <LinearLayout
             android:layout_width="396dp"

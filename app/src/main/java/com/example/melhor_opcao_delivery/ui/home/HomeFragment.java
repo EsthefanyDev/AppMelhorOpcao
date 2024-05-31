@@ -1,9 +1,13 @@
 package com.example.melhor_opcao_delivery.ui.home;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,11 +18,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.melhor_opcao_delivery.Model.CatModel;
 import com.example.melhor_opcao_delivery.Model.PopularModel;
+import com.example.melhor_opcao_delivery.Model.ViewAllModel;
 import com.example.melhor_opcao_delivery.R;
 import com.example.melhor_opcao_delivery.adapter.CatAtapter;
 import com.example.melhor_opcao_delivery.adapter.PopularAdapters;
+import com.example.melhor_opcao_delivery.adapter.ViewAllAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -34,6 +41,12 @@ public class HomeFragment extends Fragment {
     RecyclerView catRec;
     List<CatModel> catModelList;
     CatAtapter catatapter;
+
+    /////////pesquisar produtos
+    EditText pesquisa_box;
+    private List<ViewAllModel> viewAllModelList;
+    private RecyclerView recyclerViewpesquisa;
+    private ViewAllAdapter viewAllAdapter;
 
     // Marcas populares
     RecyclerView popularRec;
@@ -93,6 +106,57 @@ public class HomeFragment extends Fragment {
                     }
                 });
 
+        /////////pesquisar produtos
+        recyclerViewpesquisa = root.findViewById(R.id.pesquisa_rec);
+        pesquisa_box = root.findViewById(R.id.pesquisa);
+        viewAllModelList = new ArrayList<>();
+        viewAllAdapter = new ViewAllAdapter(getContext(), viewAllModelList);
+        recyclerViewpesquisa.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewpesquisa.setAdapter(viewAllAdapter);
+        recyclerViewpesquisa.setHasFixedSize(true);
+        pesquisa_box.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.toString().isEmpty()) {
+                    viewAllModelList.clear();
+                    viewAllAdapter.notifyDataSetChanged();
+                } else {
+                    pesquidaProduto(s.toString());
+                }
+            }
+        });
+
         return root;
+    }
+
+    private void pesquidaProduto(String query) {
+        if (!query.isEmpty()) {
+            db.collection("Produtos")
+                    .orderBy("nome") // Assuming there is a "nome" field to order by
+                    .startAt(query)
+                    .endAt(query + "\uf8ff")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @SuppressLint("NotifyDataSetChanged")
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful() && task.getResult() != null) {
+                                viewAllModelList.clear();
+                                for (DocumentSnapshot doc : task.getResult().getDocuments()) {
+                                    ViewAllModel viewAllModel = doc.toObject(ViewAllModel.class);
+                                    viewAllModelList.add(viewAllModel);
+                                }
+                                viewAllAdapter.notifyDataSetChanged();
+                            }
+                        }
+                    });
+        }
     }
 }

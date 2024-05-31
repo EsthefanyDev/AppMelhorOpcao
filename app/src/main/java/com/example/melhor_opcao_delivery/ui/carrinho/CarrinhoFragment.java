@@ -1,10 +1,7 @@
 package com.example.melhor_opcao_delivery.ui.carrinho;
 
 import android.annotation.SuppressLint;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +11,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.melhor_opcao_delivery.Model.CardModel;
 import com.example.melhor_opcao_delivery.R;
 import com.example.melhor_opcao_delivery.adapter.CardAdapter;
-import com.example.melhor_opcao_delivery.atividades.PlacedOlderActivity;
+import com.example.melhor_opcao_delivery.atividades.FinalBuyActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,16 +31,14 @@ import java.util.List;
 import java.util.Objects;
 
 public class CarrinhoFragment extends Fragment {
+
     private FirebaseFirestore db;
     private FirebaseAuth auth;
-
     private TextView meuvalorTotal;
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private CardAdapter cardAdapter;
     private List<CardModel> cardModelList;
-
-    Button buyNow;
-    int valortt;
+    private Button buyNow;
 
     public CarrinhoFragment(){
         // Construtor público vazio requerido
@@ -64,11 +58,9 @@ public class CarrinhoFragment extends Fragment {
 
         // Configurando TextView do valor total
         meuvalorTotal = root.findViewById(R.id.valorTotal);
-        LocalBroadcastManager.getInstance(requireActivity())
-                .registerReceiver(mMessagerReciver, new IntentFilter("MeuValorTotal"));
+
         //chamando o comprar agora
         buyNow = root.findViewById(R.id.comprarAgoraBtn);
-
 
         // Carregando itens do carrinho
         cardModelList = new ArrayList<>();
@@ -89,11 +81,8 @@ public class CarrinhoFragment extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
-
                                 String documentId = documentSnapshot.getId();
-
                                 CardModel cardModel = documentSnapshot.toObject(CardModel.class);
-
                                 cardModel.setDocumnentId(documentId);
 
                                 if (cardModel != null) {
@@ -101,6 +90,7 @@ public class CarrinhoFragment extends Fragment {
                                 }
                             }
                             cardAdapter.notifyDataSetChanged();
+                            calcularValorTotal(cardModelList);
                         }
                     }
                 });
@@ -108,19 +98,19 @@ public class CarrinhoFragment extends Fragment {
         buyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), PlacedOlderActivity.class);
+                Intent intent = new Intent(getContext(), FinalBuyActivity.class);
                 intent.putExtra("listaItens", (Serializable) cardModelList);
                 startActivity(intent);
             }
         });
     }
 
-    private final BroadcastReceiver mMessagerReciver = new BroadcastReceiver() {
-        @SuppressLint({"SetTextI18n", "DefaultLocale"})
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            float valorTotal = intent.getFloatExtra("valorTotal", 0);
-            meuvalorTotal.setText(String.format("Valor Total: %.2f R$", valorTotal));
+    @SuppressLint({"SetTextI18n", "DefaultLocale"})
+    private void calcularValorTotal(List<CardModel> cardModelList) {
+        double valorTotal = 0.0;
+        for (CardModel cardModel : cardModelList){
+            valorTotal += cardModel.getPrecoTotal();
         }
-    };
+        meuvalorTotal.setText("Valor Total R$" + String.format("%.2f", valorTotal));
+    }
 }

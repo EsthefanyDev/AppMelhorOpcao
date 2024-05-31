@@ -81,10 +81,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
         ///passando o preco totsl do produto
 
-        valorTotal = valorTotal + cardModelList.get(position).getPrecoTotal();
-        Intent intent = new Intent("MeuValorTotal");
-        intent.putExtra("valorTotal", valorTotal);
-        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
     }
 
     @Override

@@ -42,7 +42,8 @@
             app:layout_constraintTop_toBottomOf="@id/new_protucts_img"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="HardcodedText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -78,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:background="@android:drawable/button_onoff_indicator_on"
-        android:text="Comprar Agora"
+        android:text="Comprar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

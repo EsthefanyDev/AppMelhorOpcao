@@ -7,42 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".atividades.PlacedOlderActivity">
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/alice"
-        android:text="Seus Pedidos estao aqui"
-        android:textAlignment="center"
-        android:textColor="@color/red3"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/ic_menu_camera"
+        android:src="@mipmap/ic_launcher_cardfiinal_01"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.329" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alice"
-        android:text="Obrigado por seu pedido"
+        android:text="Seu Pedido foi Realizado, Daqui a Pouco Chegamos ai. Obrigado por seu pedido"
+        android:textAlignment="center"
         android:textColor="@color/red3"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"

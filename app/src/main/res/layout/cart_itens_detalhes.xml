@@ -9,21 +9,23 @@
     app:cardElevation="5dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="376dp"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="2">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Produto"
                 android:fontFamily="@font/alice"
+                android:text="Produto"
                 android:textSize="16sp"
                 tools:ignore="HardcodedText" />
 
@@ -32,13 +34,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="pao"
-                android:textStyle="bold"
                 android:fontFamily="@font/alice"
+                android:text="pao"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
-
 
 
         <LinearLayout
@@ -46,12 +47,13 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="2">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Unitario"
                 android:fontFamily="@font/alice"
+                android:text="Unitario"
                 android:textSize="16sp"
                 tools:ignore="HardcodedText" />
 
@@ -60,10 +62,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="20.00"
-                android:textStyle="bold"
                 android:fontFamily="@font/alice"
+                android:text="20.00"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
@@ -72,12 +74,13 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="2">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Quantidade"
                 android:fontFamily="@font/alice"
+                android:text="Quantidade"
                 android:textSize="16sp"
                 tools:ignore="HardcodedText" />
 
@@ -86,10 +89,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="3"
-                android:textStyle="bold"
                 android:fontFamily="@font/alice"
+                android:text="3"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
@@ -113,20 +116,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="pao"
-                android:textStyle="bold"
                 android:fontFamily="@font/alice"
+                android:text="pao"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/deletar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="350dp"
-            android:src="@drawable/baseline_delete" />
-
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/deletar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="370dp"
+        android:layout_marginTop="55dp"
+        android:src="@drawable/baseline_delete" />
 
 </androidx.cardview.widget.CardView>
