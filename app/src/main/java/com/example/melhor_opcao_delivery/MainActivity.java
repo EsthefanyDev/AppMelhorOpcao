@@ -1,20 +1,20 @@
 package com.example.melhor_opcao_delivery;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MenuItem;
 import android.view.Menu;
-
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.navigation.NavigationView;
-
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.melhor_opcao_delivery.atividades.InicialActivity;
+import com.google.android.material.navigation.NavigationView;
 import com.example.melhor_opcao_delivery.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -55,4 +56,30 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_logout) {
+            // Fazer logout do Firebase
+            FirebaseAuth.getInstance().signOut();
+
+            // Armazenar o estado de logout em SharedPreferences
+            SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("isLoggedOut", true);
+            editor.apply();
+
+            // Redirecionar para a tela inicial (InicialActivity)
+            Intent intent = new Intent(MainActivity.this, InicialActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish(); // Finaliza a atividade atual
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }

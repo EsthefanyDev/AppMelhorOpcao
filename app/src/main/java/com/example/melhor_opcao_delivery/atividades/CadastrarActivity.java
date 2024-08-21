@@ -37,7 +37,7 @@ public class CadastrarActivity extends AppCompatActivity {
 
     Button cadastrar;
 
-    EditText nomeusuario, emailusuario, cpfusuario, enderecousuario, senhausuario;
+    EditText nomeusuario, emailusuario, telefoneusuario, enderecousuario, senhausuario;
 
     TextView entrar;
 
@@ -61,7 +61,7 @@ public class CadastrarActivity extends AppCompatActivity {
 
             nomeusuario = findViewById(R.id.nomeusuario);
             emailusuario =findViewById(R.id.emailusuario);
-            cpfusuario = findViewById(R.id.cpfusuario);
+            telefoneusuario = findViewById(R.id.telefoneusuario);
             enderecousuario = findViewById(R.id.enderecousuario);
             senhausuario = findViewById(R.id.senhausuario);
 
@@ -92,7 +92,7 @@ public class CadastrarActivity extends AppCompatActivity {
         String nomeUsuario = nomeusuario.getText().toString();
         String emailUsuario = emailusuario.getText().toString();
         String enderecoUsuario = enderecousuario.getText().toString();
-        String cpfUsuario = cpfusuario.getText().toString();
+        String telefoneUsuario = telefoneusuario.getText().toString();
         String senhaUsuario = senhausuario.getText().toString();
 
         if (TextUtils.isEmpty(nomeUsuario)){
@@ -107,8 +107,8 @@ public class CadastrarActivity extends AppCompatActivity {
             Toast.makeText(this, "Endereço é Obrigatorio", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (TextUtils.isEmpty(cpfUsuario)){
-            Toast.makeText(this, "CPF é Obrigatorio", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(telefoneUsuario)){
+            Toast.makeText(this, "Telefone é Obrigatorio", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(senhaUsuario)){
@@ -129,7 +129,7 @@ public class CadastrarActivity extends AppCompatActivity {
                                         nomeUsuario,
                                         emailUsuario,
                                         enderecoUsuario,
-                                        cpfUsuario,
+                                        telefoneUsuario,
                                         senhaUsuario,
                                         false);
                                 String id = Objects.requireNonNull(task.getResult().getUser()).getUid();

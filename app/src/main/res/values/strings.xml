@@ -18,4 +18,8 @@
     <string name="default_notification_channel_name">Notificações Gerais</string>
     <string name="fcm_message">Nova Mensagem</string>
 
+    <string name="texto_de_entre_ou_cadast">Já tem uma conta? Faça login ou Cadastre-se!</string>
+
+
+
 </resources>
