@@ -10,24 +10,6 @@
     android:background="@mipmap/orange_background">
 
 
-  <Button
-      android:id="@+id/button3"
-      android:layout_width="217dp"
-      android:layout_height="68dp"
-      android:fontFamily="@font/alice"
-      android:onClick="telahome"
-      android:text="Vamos começar"
-      android:textAlignment="center"
-      android:textAllCaps="false"
-      android:textColor="@color/white"
-      app:iconGravity="textTop"
-      app:iconPadding="6dp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.873" />
-
   <ProgressBar
       android:id="@+id/barrapros"
       android:layout_width="wrap_content"
@@ -42,7 +24,7 @@
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="@+id/linearlayout"
-      app:layout_constraintVertical_bias="0.893" />
+      app:layout_constraintVertical_bias="0.183" />
 
   <ImageView
       android:id="@+id/imageView2"
@@ -54,9 +36,8 @@
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.324"
-      app:srcCompat="@drawable/logo2"
-     />
+      app:layout_constraintVertical_bias="0.406"
+      app:srcCompat="@drawable/logo2" />
 
   <TextView
       android:id="@+id/textView5"
@@ -71,13 +52,12 @@
       android:textSize="20sp"
       android:textStyle="bold"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.478"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
   <LinearLayout
       android:id="@+id/linearlayout"
-      android:layout_width="200dp"
+      android:layout_width="220dp"
       android:layout_height="wrap_content"
       android:orientation="vertical"
       app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +65,7 @@
       app:layout_constraintHorizontal_bias="0.55"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.65">
+      app:layout_constraintVertical_bias="0.77">
 
     <TextView
         android:id="@+id/textView2"
@@ -93,7 +73,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/alice"
         android:text="@string/texto_de_entre_ou_cadast"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="16dp" />
 
     <LinearLayout
         android:id="@+id/entraini"
@@ -120,7 +101,7 @@
           android:layout_marginTop="13dp"
           android:fontFamily="@font/alice"
           android:text="Login"
-          android:textColor="#BD0000"
+          android:textColor="@color/red1"
           android:textSize="18sp"
           android:textStyle="bold" />
     </LinearLayout>
@@ -150,7 +131,7 @@
           android:layout_marginTop="13dp"
           android:fontFamily="@font/alice"
           android:text="Criar conta"
-          android:textColor="#BD0000"
+          android:textColor="@color/red1"
           android:textSize="18sp"
           android:textStyle="bold" />
     </LinearLayout>

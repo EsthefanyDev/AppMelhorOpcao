@@ -4,9 +4,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,19 +38,19 @@ public class CadastrarActivity extends AppCompatActivity {
     FirebaseAuth auth;
 
     ProgressBar barraPros;
-
     Button cadastrar;
-
     EditText nomeusuario, emailusuario, telefoneusuario, enderecousuario, senhausuario;
-
     TextView entrar;
 
-    @SuppressLint("WrongViewCast")
+    boolean isPasswordVisible = false;
+
+    @SuppressLint({"WrongViewCast", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_cadastrar);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -54,32 +58,76 @@ public class CadastrarActivity extends AppCompatActivity {
             barraPros = findViewById(R.id.barrapros);
             barraPros.setVisibility(View.GONE);
 
-            auth =FirebaseAuth.getInstance();
+            auth = FirebaseAuth.getInstance();
             database = FirebaseDatabase.getInstance();
 
             cadastrar = findViewById(R.id.cadastrar_btn);
 
             nomeusuario = findViewById(R.id.nomeusuario);
-            emailusuario =findViewById(R.id.emailusuario);
+            emailusuario = findViewById(R.id.emailusuario);
             telefoneusuario = findViewById(R.id.telefoneusuario);
             enderecousuario = findViewById(R.id.enderecousuario);
             senhausuario = findViewById(R.id.senhausuario);
 
             entrar = findViewById(R.id.entrar);
 
-            barraPros.setVisibility(View.VISIBLE);
+            // Configurar a funcionalidade de mostrar/esconder senha com troca de ícone
+            senhausuario.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    final int DRAWABLE_END = 2; // Ícone na extremidade direita
+                    if (event.getAction() == MotionEvent.ACTION_UP) {
+                        if (event.getRawX() >= (senhausuario.getRight() - senhausuario.getCompoundDrawables()[DRAWABLE_END].getBounds().width())) {
+                            if (isPasswordVisible) {
+                                // Esconder a senha e trocar o ícone para olho fechado
+                                senhausuario.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                                senhausuario.setCompoundDrawablesWithIntrinsicBounds(
+                                        R.drawable.chave, // Ícone de chave na esquerda
+                                        0,                 // Nenhum ícone no topo
+                                        R.drawable.olhos_cruzados, // Ícone de olho fechado na direita
+                                        0);                // Nenhum ícone na parte inferior
+                                isPasswordVisible = false;
+                            } else {
+                                // Mostrar a senha e trocar o ícone para olho aberto
+                                senhausuario.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                                senhausuario.setCompoundDrawablesWithIntrinsicBounds(
+                                        R.drawable.chave, // Ícone de chave na esquerda
+                                        0,                 // Nenhum ícone no topo
+                                        R.drawable.olho, // Ícone de olho aberto na direita
+                                        0);                // Nenhum ícone na parte inferior
+                                isPasswordVisible = true;
+                            }
+                            // Coloca o cursor no final do texto
+                            senhausuario.setSelection(senhausuario.getText().length());
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            });
+
+            // Aqui você configura o clique para voltar à tela inicial
+            ImageView voltarInicial = findViewById(R.id.voltar_inicial);
+            voltarInicial.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(CadastrarActivity.this, InicialActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish(); // Encerra a atividade atual para não voltar a ela
+                }
+            });
 
             entrar.setOnClickListener(new View.OnClickListener() {
-
                 @Override
                 public void onClick(View v) {
                     startActivity(new Intent(CadastrarActivity.this, LoginActivity.class));
                 }
             });
+
             cadastrar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     createUser();
                 }
             });
@@ -95,52 +143,54 @@ public class CadastrarActivity extends AppCompatActivity {
         String telefoneUsuario = telefoneusuario.getText().toString();
         String senhaUsuario = senhausuario.getText().toString();
 
-        if (TextUtils.isEmpty(nomeUsuario)){
-            Toast.makeText(this, "Nome é Obrigatorio", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(nomeUsuario)) {
+            Toast.makeText(this, "Nome é Obrigatório", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (TextUtils.isEmpty(emailUsuario)){
-            Toast.makeText(this, "Email é Obrigatorio", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(emailUsuario)) {
+            Toast.makeText(this, "Email é Obrigatório", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (TextUtils.isEmpty(enderecoUsuario)){
-            Toast.makeText(this, "Endereço é Obrigatorio", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(enderecoUsuario)) {
+            Toast.makeText(this, "Endereço é Obrigatório", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (TextUtils.isEmpty(telefoneUsuario)){
-            Toast.makeText(this, "Telefone é Obrigatorio", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(telefoneUsuario)) {
+            Toast.makeText(this, "Telefone é Obrigatório", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (TextUtils.isEmpty(senhaUsuario)){
-            Toast.makeText(this, "Senha é Obrigatorio", Toast.LENGTH_SHORT).show();
-        }
-        if(senhaUsuario.length() < 6){
-            Toast.makeText(this, "Crie uma senha com 6 digitos", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(senhaUsuario)) {
+            Toast.makeText(this, "Senha é Obrigatória", Toast.LENGTH_SHORT).show();
             return;
         }
-        //CRIAÇÂO DO USUÁRIO
+        if (senhaUsuario.length() < 6) {
+            Toast.makeText(this, "Crie uma senha com 6 dígitos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Criação do usuário
+        barraPros.setVisibility(View.VISIBLE);
         auth.createUserWithEmailAndPassword(emailUsuario, senhaUsuario)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                barraPros.setVisibility(View.GONE);
-                                UserModel Model = new UserModel(
-                                        nomeUsuario,
-                                        emailUsuario,
-                                        enderecoUsuario,
-                                        telefoneUsuario,
-                                        senhaUsuario,
-                                        false);
-                                String id = Objects.requireNonNull(task.getResult().getUser()).getUid();
-                                database.getReference().child("Usuarios").child(id).setValue(Model);
-
-                                Toast.makeText(CadastrarActivity.this, "Cdastrado com sucesso!!", Toast.LENGTH_SHORT).show();
-                            } else {
-                                barraPros.setVisibility(View.GONE);
-                                Toast.makeText(CadastrarActivity.this, "ERRO" + task.getException(), Toast.LENGTH_SHORT).show();
-                            }
+                        barraPros.setVisibility(View.GONE);
+                        if (task.isSuccessful()) {
+                            UserModel model = new UserModel(
+                                    nomeUsuario,
+                                    emailUsuario,
+                                    enderecoUsuario,
+                                    telefoneUsuario,
+                                    senhaUsuario,
+                                    false);
+                            String id = Objects.requireNonNull(task.getResult().getUser()).getUid();
+                            database.getReference().child("Usuarios").child(id).setValue(model);
+                            Toast.makeText(CadastrarActivity.this, "Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                            // Redirecionar para outra atividade, se necessário
+                        } else {
+                            Toast.makeText(CadastrarActivity.this, "Erro: " + task.getException(), Toast.LENGTH_SHORT).show();
                         }
+                    }
                 });
     }
 }

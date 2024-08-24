@@ -62,6 +62,8 @@ public class InicialActivity extends AppCompatActivity {
         startActivity(new Intent(this, CadastrarActivity.class));
     }
 
+
+
     // Método para realizar o logout
     public void logout(View view) {
         // Fazer logout do Firebase

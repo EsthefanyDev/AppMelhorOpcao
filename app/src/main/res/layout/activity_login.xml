@@ -10,14 +10,14 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="0dp"
+        android:layout_width="273dp"
+        android:layout_height="187dp"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
         app:srcCompat="@mipmap/login" />
 
     <TextView
@@ -40,15 +40,18 @@
 
     <EditText
         android:id="@+id/emailusuario"
-        android:layout_width="370dp"
+        android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginBottom="3dp"
         android:background="@drawable/edittext_background"
-        android:drawableStart="@mipmap/ic_launcher_email_foreground"
-        android:drawablePadding="0dp"
+        android:drawableStart="@mipmap/envelope"
+        android:drawablePadding="15dp"
         android:elevation="3dp"
+        android:fontFamily="@font/alice"
         android:hint="Email"
-        android:padding="1dp"
+        android:padding="10dp"
+        android:textColor="@color/material_dynamic_neutral10"
+        android:textColorHint="@color/material_dynamic_neutral30"
         app:layout_constraintBottom_toTopOf="@+id/senhausuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
@@ -58,22 +61,26 @@
 
     <EditText
         android:id="@+id/senhausuario"
-        android:layout_width="370dp"
+        android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginBottom="3dp"
         android:background="@drawable/edittext_background"
-        android:drawableStart="@mipmap/ic_launcher_key_foreground"
-        android:drawablePadding="1dp"
+        android:drawableStart="@drawable/chave"
+        android:drawablePadding="15dp"
         android:elevation="3dp"
+        android:fontFamily="@font/alice"
         android:hint="Senha"
+        android:drawableEnd="@drawable/olhos_cruzados"
         android:inputType="textPassword"
-        android:padding="1dp"
+        android:padding="10dp"
+        android:textColor="@color/material_dynamic_neutral10"
+        android:textColorHint="@color/material_dynamic_neutral30"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589"
+        app:layout_constraintVertical_bias="0.588"
         app:layout_constraintWidth_percent=".8" />
 
     <Button
@@ -82,7 +89,7 @@
         android:layout_height="62dp"
         android:backgroundTint="@color/red1"
         android:text="Login"
-        android:textStyle="bold"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,14 +103,13 @@
         android:text="Ainda não tem uma conta ?"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78" />
+        app:layout_constraintVertical_bias="0.814" />
 
     <TextView
         android:id="@+id/casdastrar"
@@ -112,19 +118,34 @@
         android:text="Cadastrar-se"
         android:textColor="@color/red1"
         android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78" />
+        app:layout_constraintVertical_bias="0.814" />
 
     <ProgressBar
         android:id="@+id/barrapros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="605dp" />
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/voltar_inicial2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="241dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.035"
+        app:srcCompat="@drawable/back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

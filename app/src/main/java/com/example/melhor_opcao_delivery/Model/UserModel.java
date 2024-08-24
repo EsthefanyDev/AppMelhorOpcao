@@ -4,7 +4,7 @@ public class UserModel {
         String nomeUsuario;
         String emailUsuario;
         String enderecoUsuario;
-        String cpfUsuario;
+        String telefoneUsuario;
         String senhaUsuario;
         String imgPerfil;
         boolean isAdmin;
@@ -13,11 +13,11 @@ public class UserModel {
         // Este é o construtor padrão exigido pelo Firebase
     }
 
-        public UserModel(String nomeUsuario, String emailUsuario, String enderecoUsuario, String cpfUsuario, String senhaUsuario, boolean isAdmin){
+        public UserModel(String nomeUsuario, String emailUsuario, String enderecoUsuario, String telefoneUsuario, String senhaUsuario, boolean isAdmin){
             this.nomeUsuario = nomeUsuario;
             this.emailUsuario = emailUsuario;
             this.enderecoUsuario = enderecoUsuario;
-            this.cpfUsuario = cpfUsuario;
+            this.telefoneUsuario = telefoneUsuario;
             this.senhaUsuario = senhaUsuario;
             this.isAdmin = isAdmin;
         }
@@ -55,11 +55,11 @@ public class UserModel {
     }
 
     public String getCpfUsuario() {
-        return cpfUsuario;
+        return telefoneUsuario;
     }
 
     public void setCpfUsuario(String cpfUsuario) {
-        this.cpfUsuario = cpfUsuario;
+        this.telefoneUsuario = cpfUsuario;
     }
 
     public String getSenhaUsuario() {
